@@ -22,4 +22,4 @@ if __name__ == "__main__":
     glass1 = Glass(500, 0)
     print(glass1)
     # glass2 = Glass("500", 0)
-    # glass3 = Glass(-500, 0)
+    glass3 = Glass(-500, 0)
