@@ -4,27 +4,27 @@ files:
   visible: true
   placeholders:
   - offset: 246
-    length: 86
+    length: 411
     placeholder_text: '...  # TODO инициализировать связный список'
     initial_state:
-      length: 43
+      length: 86
       offset: 246
     initialized_from_dependency: false
     selected: true
-    status: Solved
+    status: Unchecked
     encrypted_possible_answer: |-
       if data is not None:
                   for value in data:
                       self.append(value)
-  - offset: 1524
+  - offset: 1849
     length: 357
     placeholder_text: '...  # TODO реализовать алгоритм добавления узла в конец последовательности'
     initial_state:
-      length: 75
-      offset: 1481
+      length: 357
+      offset: 1524
     initialized_from_dependency: false
     selected: true
-    status: Solved
+    status: Unchecked
     encrypted_possible_answer: |-
       append_node = Node(value)
 
@@ -144,8 +144,5 @@ files:
             self.is_valid(next_)
             self.next = next_
   learner_created: false
-status: Solved
-feedback:
-  message: Congratulations!
-  time: Sat, 11 Sep 2021 08:53:32 UTC
+status: Unchecked
 record: -1

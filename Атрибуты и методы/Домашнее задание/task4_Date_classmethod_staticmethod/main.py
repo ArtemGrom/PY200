@@ -14,19 +14,36 @@ class Date:
 
         self.is_valid_date(self.day, self.month, self.year)
 
-    def is_leap_year(self, year: int):
+    @staticmethod
+    def is_leap_year(year: int) -> bool:
         """Проверяет, является ли год високосным"""
-        ...  # TODO
+        if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
+            return True
+        return False
 
     def get_max_day(self, month: int, year: int):
         """Возвращает максимальное количество дней в месяце для указанного года"""
-        ...  # TODO
+        if self.is_leap_year(year):
+            return self.__class__.DAY_OF_MONTH[1][month - 1]
+        return self.__class__.DAY_OF_MONTH[0][month - 1]
 
-    def is_valid_date(self, day: int, month: int, year: int):
+    @staticmethod
+    def is_valid_date(day: int, month: int, year: int):
         """Проверяет, является ли дата корректной"""
-        ...  # TODO
+        if not isinstance(day, int) and not isinstance(month, int) and not isinstance(year, int):
+            raise TypeError
+        if not 0 < day < 32 or not 0 < month < 12 or year < 0:
+            raise IndexError
 
 
 if __name__ == "__main__":
-    # Write your solution here
-    pass
+    data_1 = Date(15, 2, 1589)
+    data_2 = Date(3, 10, 1666)
+    data_3 = Date(31, 5, 1589)
+    # data_4 = Date(10, 5, -300)
+    # data_5 = Date(31, "5", 1589)
+    # data_6 = Date(35, 5, 1589)
+    # data_7 = Date(12, 15, 1589)
+    print(data_1.get_max_day(2, 1633))
+
+
