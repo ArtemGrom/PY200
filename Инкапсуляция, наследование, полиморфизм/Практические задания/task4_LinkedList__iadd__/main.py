@@ -86,6 +86,7 @@ class LinkedList:
 
     def __iadd__(self, other: ["LinkedList", list]):
         ... # TODO определить метод для оператора +=
+        return self + other
 
 
 if __name__ == "__main__":

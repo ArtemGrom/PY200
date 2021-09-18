@@ -45,7 +45,7 @@ files:
     selected: true
     status: Solved
     encrypted_possible_answer: self.head
-  - offset: 1610
+  - offset: 1612
     length: 40
     placeholder_text: '...  # TODO метод должен возвращать значение узла'
     initial_state:

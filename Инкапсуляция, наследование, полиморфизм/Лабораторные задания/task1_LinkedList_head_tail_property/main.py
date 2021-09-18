@@ -70,8 +70,34 @@ class LinkedList:
         return f"{self.to_list()}"
 
     # TODO реализовать getter и setter для head
+    @property
+    def head(self):
+        return self._head
+
+    @head.setter
+    def head(self, node: Optional["Node"]):
+        Node(None).is_valid(node)
+
+        if node is None:
+            self._head = node
+        else:
+            node.next = self.head.next
+            self._head = node
 
     # TODO реализовать getter и setter для tail
+    @property
+    def tail(self):
+        return self._tail
+
+    @tail.setter
+    def tail(self, node: Optional["Node"]):
+        Node(None).is_valid(node)
+
+        if node is None:
+            self._tail = node
+        else:
+            node.next = self.tail.next
+            self._tail = node
 
 
 if __name__ == "__main__":

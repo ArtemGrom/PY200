@@ -12,4 +12,4 @@ class TestCase(unittest.TestCase):
         linked_nodes(left_node, right_node)
 
         msg = "Узлы не были успешно связаны. Проверьте функцию linked_nodes. "
-        self.assertEqual(repr(left_node.next), repr(right_node), msg)
+        self.assertEqual(repr(left_node.__next), repr(right_node), msg)

@@ -75,7 +75,7 @@ class LinkedList:
 
         ...  # TODO алгоритм удаления
         if index == 0:
-            self.head = self.head.next
+            self.head = self.head.__next
         elif index == self.len - 1:
             node = self.step_by_step_on_nodes(self.len - 2)
             node.next = None

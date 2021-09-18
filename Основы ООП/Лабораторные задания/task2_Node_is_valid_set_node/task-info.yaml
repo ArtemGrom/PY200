@@ -31,7 +31,7 @@ files:
       if not isinstance(node, (type(None), Node)):
                   raise TypeError
   - offset: 935
-    length: 98
+    length: 100
     placeholder_text: |-
       # TODO метод должен проверять корректность узла и устанавливать значение атрибуту next
               ...
@@ -44,7 +44,7 @@ files:
     encrypted_possible_answer: |-
       self.is_valid(next_)
               self.next = next_
-  - offset: 1202
+  - offset: 1204
     length: 14
     placeholder_text: |-
       # TODO

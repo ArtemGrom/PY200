@@ -25,7 +25,7 @@ files:
       length: 29
       offset: 2030
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: |-
       if index == 0:
@@ -49,7 +49,7 @@ files:
       length: 78
       offset: 2347
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: |-
       for i in range(self.len, 0):

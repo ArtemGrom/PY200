@@ -5,36 +5,36 @@ files:
   placeholders:
   - offset: 399
     length: 44
-    placeholder_text: 'self.next = None  # TODO заменить на private'
+    placeholder_text: 'self.__next = None  # TODO заменить на private'
     initial_state:
       length: 44
       offset: 399
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: self.__next = None
   - offset: 520
     length: 124
-    placeholder_text: 'f"Node({self.value}, {None})" if self.next is None else f"Node({self.value},
-      Node({self.next}))"  # TODO заменить на private'
+    placeholder_text: 'f"Node({self.value}, {None})" if self.__next is None else f"Node({self.value},
+      Node({self.__next}))"  # TODO заменить на private'
     initial_state:
       length: 124
       offset: 520
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: f"Node({self.value}, {None})" if self.__next is None
       else f"Node({self.value}, Node({self.__next}))"
   - offset: 934
     length: 45
-    placeholder_text: 'self.next = next  # TODO заменить на private'
+    placeholder_text: 'self.__next = __next  # TODO заменить на private'
     initial_state:
       length: 45
       offset: 934
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
-    encrypted_possible_answer: self.__next = next
+    selected: true
+    status: Solved
+    encrypted_possible_answer: self.__next = __next
   text: |
     from typing import Any, Optional
 
@@ -84,5 +84,8 @@ files:
   text: |
     Node(first_node, Node(second_node)) Node(second_node, None)
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 18 Sep 2021 07:11:26 UTC
 record: -1

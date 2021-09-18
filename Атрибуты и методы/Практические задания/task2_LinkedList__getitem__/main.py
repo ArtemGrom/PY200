@@ -41,7 +41,7 @@ class LinkedList:
 
         current_node = self.head
         for _ in range(index):
-            current_node = current_node.next
+            current_node = current_node.__next
 
         return current_node
 
