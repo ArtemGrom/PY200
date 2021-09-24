@@ -3,7 +3,7 @@ files:
 - name: main.py
   visible: true
   placeholders:
-  - offset: 815
+  - offset: 664
     length: 58
     placeholder_text: '...  # TODO метод должен возвращать значение текущего узла'
     initial_state:
@@ -91,5 +91,5 @@ files:
 status: Solved
 feedback:
   message: Congratulations!
-  time: Sat, 11 Sep 2021 07:04:52 UTC
+  time: Tue, 07 Sep 2021 06:33:30 UTC
 record: -1

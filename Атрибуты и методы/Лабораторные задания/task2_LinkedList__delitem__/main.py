@@ -70,12 +70,12 @@ class LinkedList:
         if not isinstance(index, int):
             raise TypeError
 
-        if not 0 >= index > self.len:
+        if not 0 <= index < self.len:
             raise IndexError
 
         ...  # TODO алгоритм удаления
         if index == 0:
-            self.head = self.head.__next
+            self.head = self.head.next
         elif index == self.len - 1:
             node = self.step_by_step_on_nodes(self.len - 2)
             node.next = None

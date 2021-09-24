@@ -7,7 +7,7 @@ files:
     length: 163
     placeholder_text: '...  # TODO проверка индекса'
     initial_state:
-      length: 28
+      length: 163
       offset: 1992
     initialized_from_dependency: false
     selected: true
@@ -19,11 +19,11 @@ files:
               if not 0 <= index < self.len:  # для for
                   raise IndexError()
   - offset: 2165
-    length: 431
+    length: 429
     placeholder_text: '...  # TODO алгоритм удаления'
     initial_state:
-      length: 29
-      offset: 2030
+      length: 431
+      offset: 2165
     initialized_from_dependency: false
     selected: true
     status: Failed
@@ -185,7 +185,7 @@ files:
 status: Failed
 feedback:
   message: Incorrect
-  time: Sat, 11 Sep 2021 10:06:09 UTC
+  time: Mon, 20 Sep 2021 08:31:28 UTC
   expected: |
     [1, 2, 3]
     2

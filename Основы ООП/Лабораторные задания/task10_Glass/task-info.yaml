@@ -4,13 +4,13 @@ files:
   visible: true
   placeholders:
   - offset: 261
-    length: 31
+    length: 82
     placeholder_text: '# TODO добавить атрибут и метод'
     initial_state:
       length: 31
       offset: 261
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Solved
     encrypted_possible_answer: |-
       self.material = material
@@ -55,5 +55,5 @@ files:
 status: Solved
 feedback:
   message: Congratulations!
-  time: Sat, 11 Sep 2021 07:04:58 UTC
+  time: Tue, 07 Sep 2021 09:13:18 UTC
 record: -1

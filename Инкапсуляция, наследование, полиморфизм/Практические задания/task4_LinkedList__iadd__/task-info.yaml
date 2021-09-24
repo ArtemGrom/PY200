@@ -4,13 +4,13 @@ files:
   visible: true
   placeholders:
   - offset: 2590
-    length: 72
+    length: 44
     placeholder_text: '... # TODO определить метод для оператора +='
     initial_state:
       length: 44
       offset: 2590
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: |-
       if not isinstance(other, (LinkedList, list)):
@@ -167,5 +167,5 @@ files:
 status: Solved
 feedback:
   message: Congratulations!
-  time: Sat, 18 Sep 2021 09:05:06 UTC
+  time: Mon, 20 Sep 2021 08:39:24 UTC
 record: -1

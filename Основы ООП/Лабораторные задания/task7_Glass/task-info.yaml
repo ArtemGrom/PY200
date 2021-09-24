@@ -4,13 +4,13 @@ files:
   visible: true
   placeholders:
   - offset: 0
-    length: 27
+    length: 506
     placeholder_text: '# TODO  создать класс Glass'
     initial_state:
       length: 27
       offset: 0
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Solved
     encrypted_possible_answer: |-
       class Glass:
@@ -61,5 +61,5 @@ files:
 status: Solved
 feedback:
   message: Congratulations!
-  time: Sat, 11 Sep 2021 07:05:02 UTC
+  time: Tue, 07 Sep 2021 07:11:43 UTC
 record: -1
