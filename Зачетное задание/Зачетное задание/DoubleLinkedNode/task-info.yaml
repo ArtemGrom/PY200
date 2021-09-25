@@ -35,5 +35,8 @@ files:
 - name: tests/__init__.py
   visible: false
   learner_created: false
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 25 Sep 2021 09:57:39 UTC
+record: 1

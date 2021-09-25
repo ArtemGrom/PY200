@@ -1,4 +1,4 @@
-from typing import Iterable
+from typing import Iterable, List
 from abc import ABC, abstractmethod
 
 
@@ -23,11 +23,19 @@ class IStructureDriver(ABC):
 
 
 class SimpleFileDriver(IStructureDriver):
-    ...  # TODO реализовать драйвер работы с текстовым файлом
+    """Драйвер работы с текстовым файлом"""
+    def __init__(self, filename):
+        self.filename = filename
 
-    # TODO реализовать метод чтения данных из файла
+    def read(self) -> List:
+        with open(self.filename) as f:
+            return [int(line.strip()) for line in f]
 
-    # TODO реализовать метод записи в файл построчно
+    def write(self, data: Iterable) -> None:
+        with open(self.filename, "w") as f:
+            for item in data:
+                f.write(str(item))
+                f.write("\n")
 
     def __repr__(self):
         return f"{self.__class__.__name__}(\"{self.filename}\")"
