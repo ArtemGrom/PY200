@@ -81,7 +81,7 @@ class LinkedList:
         if node is None:
             self._head = node
         else:
-            node.next = self.head.next
+            node.next = self.head
             self._head = node
 
     # TODO реализовать getter и setter для tail
@@ -96,13 +96,17 @@ class LinkedList:
         if node is None:
             self._tail = node
         else:
-            node.next = self.tail.next
+            node.next = self.tail
             self._tail = node
 
 
 if __name__ == "__main__":
-    list_ = [1, 2, 3]
+    list_ = []
 
     ll = LinkedList(list_)
-    print(ll.head)
-    print(ll.tail)
+    # ll.append(1)
+    # ll.append(2)
+    # ll.append(3)
+    print(ll)
+    # print(ll.head)
+    # print(ll.tail)
