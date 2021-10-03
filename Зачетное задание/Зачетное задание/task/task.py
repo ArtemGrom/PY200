@@ -6,6 +6,8 @@ from node import Node, DoubleLinkedNode
 class LinkedList(MutableSequence):
     """Класс, описывающий односвязный список"""
 
+    CLASS_NODE = Node
+
     def __init__(self, data: Iterable = None):
         """Конструктор связного списка"""
         self._len = 0
@@ -22,7 +24,7 @@ class LinkedList(MutableSequence):
 
     @head.setter
     def head(self, node: ["Node", "DoubleLinkedNode"]):
-        Node(None).is_valid(node)
+        Node.is_valid(node)
 
         if node is None:
             self._head = node
@@ -46,7 +48,7 @@ class LinkedList(MutableSequence):
 
     def append(self, value: Any):
         """ Добавление элемента в конец связного списка"""
-        append_node = Node(value)
+        append_node = self.CLASS_NODE(value)
 
         if self.head is None:
             self.head = self.tail = append_node
@@ -131,7 +133,7 @@ class LinkedList(MutableSequence):
         if not isinstance(index, int):
             raise TypeError
 
-        insert_node = Node(value)
+        insert_node = self.CLASS_NODE(value)
         if index == 0:
             insert_node.next = self.head
             self.head = insert_node
@@ -153,49 +155,15 @@ class LinkedList(MutableSequence):
 
 
 class DoubleLinkedList(LinkedList):
+    CLASS_NODE = DoubleLinkedNode
+
     def __init__(self, data: Iterable = None):
         """Конструктор двусвязного списка"""
         super().__init__(data)
 
-    def _linked_nodes(self, left_node: DoubleLinkedNode, right_node: Optional[DoubleLinkedNode] = None) -> None:
-        if not right_node:
-            self.tail = left_node
-        elif not left_node:
-            self.head = right_node
-        else:
-            left_node.next = right_node
-            right_node.prev = left_node
-
-    def __repr__(self):
-        """Метод возвращает строковое представление объекта как экземпляра"""
-        return f"{self.__class__.__name__}({self._to_list()})"
-
-    def append(self, value: Any):
-        """ Добавление элемента в конец связного списка. """
-        append_node = DoubleLinkedNode(value)
-
-        if self.head is None:
-            self.head = self.tail = append_node
-        else:
-            self._linked_nodes(self.tail, append_node)
-            self.tail = append_node
-
-        self._len += 1
-
-    def insert(self, index: int, value) -> None:
-        insert_node = DoubleLinkedNode(value)
-        if index == 0:
-            self._linked_nodes(insert_node, self.head)
-            self.head = insert_node
-            self._len += 1
-        elif index >= self._len:
-            self.append(value)
-        elif 0 < index < self._len:
-            next_node = self.step_by_step_on_nodes(index)
-            prev_node = next_node.prev
-            self._linked_nodes(prev_node, insert_node)
-            self._linked_nodes(insert_node, next_node)
-            self._len += 1
+    def linked_nodes(self, left_node: DoubleLinkedNode, right_node: Optional[DoubleLinkedNode] = None) -> None:
+        left_node.next = right_node
+        right_node.prev = left_node
 
 
 def test_linked_list():

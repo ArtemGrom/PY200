@@ -79,3 +79,4 @@ def test_double_linked_node():
 
 if __name__ == "__main__":
     test_double_linked_node()
+    print(bool(Node(0)))
