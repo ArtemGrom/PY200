@@ -11,7 +11,7 @@ class TestCase(unittest.TestCase):
         msg = f"Метод is_valid должен генерировать ошибку \"TypeError\", " \
               f"если тип проверяемого объекта не \"{Node.__name__}\" или не \"{type(None).__name__}"
         with self.assertRaises(TypeError, msg=msg):
-            node.is_valid("incorrect_type")
+            node.check_index("incorrect_type")
 
     def test_init_node(self):
         # todo init node with __next and without

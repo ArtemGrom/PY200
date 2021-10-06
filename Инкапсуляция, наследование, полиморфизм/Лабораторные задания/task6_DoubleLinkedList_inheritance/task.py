@@ -69,8 +69,8 @@ class LinkedList:
     def __str__(self) -> str:
         return f"{self.to_list()}"
 
-    # TODO реализовать getter и setter для head
+    # TODO реализовать getter и setter для _head
 
-    # TODO реализовать getter и setter для tail
+    # TODO реализовать getter и setter для _tail
 
     # TODO Реализовать класс DoubleLinkedList

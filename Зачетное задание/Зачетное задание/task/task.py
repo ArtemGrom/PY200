@@ -11,58 +11,30 @@ class LinkedList(MutableSequence):
     def __init__(self, data: Iterable = None):
         """Конструктор связного списка"""
         self._len = 0
-        self.head: Optional[Node] = None
-        self.tail: Optional[Node] = None
+        self._head: Optional[Node] = None
+        self._tail: Optional[Node] = None
 
         if data is not None:
             for value in data:
                 self.append(value)
 
-    @property
-    def head(self):
-        return self._head
-
-    @head.setter
-    def head(self, node: ["Node", "DoubleLinkedNode"]):
-        Node.is_valid(node)
-
-        if node is None:
-            self._head = node
-        else:
-            node.next = self.head
-            self._head = node
-
-    @property
-    def tail(self):
-        return self._tail
-
-    @tail.setter
-    def tail(self, node: ["Node", "DoubleLinkedNode"]):
-        Node(None).is_valid(node)
-
-        if node is None:
-            self._tail = node
-        else:
-            node.next = self.tail
-            self._tail = node
-
     def append(self, value: Any):
         """ Добавление элемента в конец связного списка"""
         append_node = self.CLASS_NODE(value)
 
-        if self.head is None:
-            self.head = self.tail = append_node
+        if self._head is None:
+            self._head = self._tail = append_node
         else:
-            self.linked_nodes(self.tail, append_node)
-            self.tail = append_node
+            self.linked_nodes(self._tail, append_node)
+            self._tail = append_node
 
         self._len += 1
 
     def step_by_step_on_nodes(self, index: int) -> [Node, DoubleLinkedNode]:
         """ Функция выполняет перемещение по узлам до указанного индекса. И возвращает узел. """
-        self.is_valid(index)
+        self.check_index(index)
 
-        current_node = self.head
+        current_node = self._head
         for _ in range(index):
             current_node = current_node.next
 
@@ -100,7 +72,7 @@ class LinkedList(MutableSequence):
         """Метод возвращает строковое представление объекта"""
         return f"{self._to_list()}"
 
-    def is_valid(self, index: int):
+    def check_index(self, index: int):
         """Проверяет объект на соответствие данным и на выход за границы индекса"""
         if not isinstance(index, int):
             raise TypeError
@@ -110,10 +82,10 @@ class LinkedList(MutableSequence):
 
     def __delitem__(self, key):
         """Метод реализующий удаление данных из объекта"""
-        self.is_valid(key)
+        self.check_index(key)
 
         if key == 0:
-            self.head = self.head.next
+            self._head = self._head.next
         elif key == self._len - 1:
             node = self.step_by_step_on_nodes(self._len - 2)
             node.next = None
@@ -135,8 +107,8 @@ class LinkedList(MutableSequence):
 
         insert_node = self.CLASS_NODE(value)
         if index == 0:
-            insert_node.next = self.head
-            self.head = insert_node
+            insert_node.next = self._head
+            self._head = insert_node
             self._len += 1
         elif index >= self._len:
             self.append(value)
@@ -149,8 +121,8 @@ class LinkedList(MutableSequence):
             self._len += 1
 
     def clear(self):
-        self.head = None
-        self.tail = None
+        self._head = None
+        self._tail = None
         self._len = 0
 
 
@@ -174,8 +146,8 @@ def test_linked_list():
     ll.append("str")
     ll.append([1.1, 1.2])
     print(ll)
-    print(ll.head)
-    print(ll.tail)
+    print(ll._head)
+    print(ll._tail)
     print(repr(ll))
     print(str(ll))
     print(len(ll))
@@ -201,8 +173,8 @@ def test_double_linked_list():
     ll.append("str")
     ll.append([1.1, 1.2])
     print(ll)
-    print(ll.head)
-    print(ll.tail)
+    print(ll._head)
+    print(ll._tail)
     print(repr(ll))
     print(str(ll))
     print(len(ll))

@@ -96,7 +96,6 @@ class LinkedList:
         return f"{self.to_list()}"
 
     def clear(self):
-        ...  # TODO поэксперементируйте, как с помощью функции del очистить LinkedList
         while self.len > 0:
             self.__delitem__(self.len - 1)
 
