@@ -69,7 +69,7 @@ class LinkedList:
     def __str__(self) -> str:
         return f"{self.to_list()}"
 
-    # TODO реализовать getter и setter для head
+    # TODO реализовать getter и setter для _head
     @property
     def head(self):
         return self._head
@@ -81,10 +81,10 @@ class LinkedList:
         if node is None:
             self._head = node
         else:
-            node.next = self.head.next
+            node.next = self.head
             self._head = node
 
-    # TODO реализовать getter и setter для tail
+    # TODO реализовать getter и setter для _tail
     @property
     def tail(self):
         return self._tail
@@ -96,13 +96,17 @@ class LinkedList:
         if node is None:
             self._tail = node
         else:
-            node.next = self.tail.next
+            node.next = self.tail
             self._tail = node
 
 
 if __name__ == "__main__":
-    list_ = [1, 2, 3]
+    list_ = []
 
     ll = LinkedList(list_)
-    print(ll.head)
-    print(ll.tail)
+    # ll.append(1)
+    # ll.append(2)
+    # ll.append(3)
+    print(ll)
+    # print(ll._head)
+    # print(ll._tail)
